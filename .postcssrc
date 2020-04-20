@@ -1,0 +1,25 @@
+{
+  "modules": true,
+  "parser": "postcss-comment",
+  "plugins": {
+    "postcss-easy-import": {
+      "extensions": ".pcss"
+    },
+    "postcss-import": {},
+    "postcss-pxtorem": {},
+    "postcss-nesting": {},
+    "postcss-custom-media": {},
+    "postcss-custom-properties": {},
+    "css-mqpacker": {},
+    "postcss-simple-vars": {},
+    "cssnano": {
+      "preset": [
+        "default", {"discardComments": {"removeAll": true}}
+      ]
+    },
+    "autoprefixer": {
+      "grid": true
+    },
+    "doiuse": {}
+  }
+}
