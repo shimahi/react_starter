@@ -7,7 +7,9 @@
     },
     "postcss-pxtorem": {},
     "postcss-nesting": {},
-    "postcss-custom-media": {},
+    "postcss-custom-media": {
+      "importFrom": "./src/assets/css/foundation/media.pcss"
+    },
     "postcss-custom-properties": {},
     "css-mqpacker": {},
     "postcss-simple-vars": {},
