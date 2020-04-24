@@ -1,7 +1,6 @@
 //汎用設定
 const path = require('path')
 const webpack = require('webpack')
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   entry: './src/index.tsx',
@@ -24,7 +23,7 @@ module.exports = {
             loader: 'css-loader',
             options: {
               modules: true,
-              url: false,
+              url: true,
               importLoaders: 1,
             },
           },
@@ -46,9 +45,6 @@ module.exports = {
     ],
   },
   plugins: [
-    // new MiniCssExtractPlugin({
-    //   filename: 'index.css',
-    // }),
     new webpack.ProvidePlugin({
       Promise: 'es6-promise',
     }),
