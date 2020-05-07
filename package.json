@@ -17,6 +17,7 @@
     "doiuse": "^4.2.0",
     "file-loader": "^6.0.0",
     "glob": "^7.1.6",
+    "html-webpack-plugin": "^4.3.0",
     "postcss-comment": "^2.0.0",
     "postcss-custom-media": "^7.0.8",
     "postcss-custom-properties": "^9.1.1",
@@ -33,7 +34,8 @@
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3",
-    "webpack-merge": "^4.2.2"
+    "webpack-merge": "^4.2.2",
+    "worker-plugin": "^4.0.3"
   },
   "scripts": {
     "build": "webpack --config webpack.prod.js",

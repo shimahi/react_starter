@@ -1,5 +1,7 @@
 //汎用設定
 const path = require('path')
+const HTMLPlugin = require('html-webpack-plugin')
+const WorkerPlugin = require('worker-plugin')
 const webpack = require('webpack')
 
 module.exports = {
@@ -12,7 +14,12 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        use: 'ts-loader',
+        use: {
+          loader: 'ts-loader',
+          options: {
+            transpileOnly: true,
+          },
+        },
         exclude: /node_modules/,
       },
       {
@@ -45,12 +52,13 @@ module.exports = {
     ],
   },
   plugins: [
-    new webpack.ProvidePlugin({
-      Promise: 'es6-promise',
+    new HTMLPlugin({
+      template: path.join(__dirname, 'src/index.html'),
     }),
+    new WorkerPlugin(),
   ],
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx'],
+    extensions: ['.js', '.ts', '.tsx', '.json', '.mjs', '.wasm'],
     modules: [
       path.resolve(__dirname, 'src'),
       path.resolve(__dirname, 'node_modules'),
