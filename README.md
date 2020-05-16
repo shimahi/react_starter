@@ -1,1 +1,1 @@
-TypeScript + React でCSS Modulesや画像の読み込みができるようになるまでのセットアップ
+自前プロダクトで汎用的に使うReact+TypeScript+PostCSSの設定
