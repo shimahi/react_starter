@@ -1,4 +1,5 @@
 import 'ress'
+import 'assets/css/foundation/global.pcss'
 import React from 'react'
 import { render } from 'react-dom'
 
