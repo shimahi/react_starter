@@ -1,0 +1,11 @@
+{
+  "name": "inu",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "shimahi",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --config webpack.prod.js",
+    "start": "webpack-dev-server --open --hot --inline --config webpack.dev.js"
+  }
+}
