@@ -242,9 +242,9 @@ yarn add react react-dom
 
 yarn add -D typescript webpack webpack-cli ts-loader webpack-dev-server html-webpack-plugin style-loader css-loader @types/node url-loader file-loader postcss-loader worker-plugin webpack-merge dotenv-webpack @types/react @types/react-dom autoprefixer css-mqpacker cssnano glob postcss-comment postcss-custom-media postcss-easy-import postcss-nesting postcss-pxtorem postcss-custom-properties ress strip-ansi doiuse apollo-client react-apollo graphql graphql-tag @apollo/react-hooks apollo-cache-inmemory apollo-link-http
 
-
-touch README.md
-echo '# My New React App' >> README.md
+### write README
+echo '# ' >> README.md
+basename `pwd` >> README.md
 
 ### remove this script
 rm init.sh
