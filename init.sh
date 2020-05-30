@@ -36,13 +36,10 @@ echo '{
   "modules": true,
   "parser": "postcss-comment",
   "plugins": {
-    "postcss-easy-import": {
-      "extensions": ".pcss"
-    },
     "postcss-pxtorem": {},
     "postcss-nesting": {},
     "postcss-custom-media": {
-      "importFrom": "./src/assets/css/foundation/media.pcss"
+      "importFrom": "./src/assets/css/foundation/media.css"
     },
     "postcss-custom-properties": {},
     "css-mqpacker": {},
@@ -52,7 +49,7 @@ echo '{
       ]
     },
     "autoprefixer": {
-      "grid": true
+      "grid": "autoplace"
     },
     "doiuse": {}
   }
@@ -192,8 +189,8 @@ mkdir src/assets/css
 mkdir src/assets/css/foundation
 touch src/index.html
 touch src/index.tsx
-touch src/assets/css/foundation/global.pcss
-touch src/assets/css/foundation/media.pcss
+touch src/assets/css/foundation/global.css
+touch src/assets/css/foundation/media.css
 
 echo '<!DOCTYPE html>
 <html lang="ja">
@@ -209,7 +206,7 @@ echo '<!DOCTYPE html>
 ' >> src/index.html
 
 echo "import 'ress'
-import 'assets/css/foundation/global.pcss'
+import 'assets/css/foundation/global.css'
 
 import React from 'react'
 import { render } from 'react-dom'
@@ -224,7 +221,7 @@ render(<App />, document.getElementById('root'))
 echo 'a {
   text-decoration: none;
 }
-' >> src/assets/css/foundation/global.pcss
+' >> src/assets/css/foundation/global.css
 
 echo '@custom-media --xxs (max-width: 413.8px);
 @custom-media --xs (max-width: 575.98px);
@@ -233,14 +230,14 @@ echo '@custom-media --xxs (max-width: 413.8px);
 @custom-media --md (min-width: 767.98px);
 @custom-media --lg (min-width: 991.98px);
 @custom-media --xl (min-width: 1199.98px);
-' >> src/assets/css/foundation/media.pcss
+' >> src/assets/css/foundation/media.css
 
 
 ### import npm packages
 
 yarn add react react-dom
 
-yarn add -D typescript webpack webpack-cli ts-loader webpack-dev-server html-webpack-plugin style-loader css-loader @types/node url-loader file-loader postcss-loader worker-plugin webpack-merge dotenv-webpack @types/react @types/react-dom autoprefixer css-mqpacker cssnano glob postcss-comment postcss-custom-media postcss-easy-import postcss-nesting postcss-pxtorem postcss-custom-properties ress strip-ansi doiuse apollo-client react-apollo graphql graphql-tag @apollo/react-hooks apollo-cache-inmemory apollo-link-http
+yarn add -D typescript webpack webpack-cli ts-loader webpack-dev-server html-webpack-plugin style-loader css-loader @types/node url-loader file-loader postcss-loader worker-plugin webpack-merge dotenv-webpack @types/react @types/react-dom autoprefixer css-mqpacker cssnano postcss-comment postcss-custom-media postcss-nesting postcss-pxtorem postcss-custom-properties ress strip-ansi doiuse apollo-client react-apollo graphql graphql-tag @apollo/react-hooks apollo-cache-inmemory apollo-link-http
 
 ### write README
 var=basename`pwd`
