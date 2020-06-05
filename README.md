@@ -3,7 +3,7 @@
 Webpackを用いた TypeScript + React + Apollo + PostCSS アプリの環境構築を `create-react-app` を使わずに行えるシェルスクリプトです。このリポジトリをクローンして `init.sh` を実行してください。
 
 ```
-$ git@github.com:shimahi/react_starter.git
+$ git clone git@github.com:shimahi/react_starter.git
 ```
 
 ```
