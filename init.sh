@@ -191,6 +191,9 @@ touch src/index.html
 touch src/index.tsx
 touch src/assets/css/foundation/global.css
 touch src/assets/css/foundation/media.css
+mkdir types
+touch types/style.css.d.ts
+touch types/images.d.ts
 
 echo '<!DOCTYPE html>
 <html lang="ja">
@@ -232,6 +235,28 @@ echo '@custom-media --xxs (max-width: 413.8px);
 @custom-media --xl (min-width: 1199.98px);
 ' >> src/assets/css/foundation/media.css
 
+echo "declare module '*.png'
+declare module '*.jpg'
+declare module '*.gif'
+declare module '*.svg'
+" >> types/images.d.ts
+
+echo "declare module '*.css' {
+  interface IClassNames {
+    [className: string]: string
+  }
+  const classNames: IClassNames
+  export = classNames
+}
+
+declare module '*.pcss' {
+  interface IClassNames {
+    [className: string]: string
+  }
+  const classNames: IClassNames
+  export = classNames
+}
+" >> types/style.css.d.ts
 
 ### import npm packages
 
