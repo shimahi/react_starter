@@ -189,10 +189,7 @@ else
   " >>webpack.prod.js
 
   ### make source files
-  mkdir src
-  mkdir src/assets
-  mkdir src/assets/css
-  mkdir src/assets/css/foundation
+  mkdir -p src/assets/css/foundation
   touch src/index.html
   touch src/index.tsx
   touch src/assets/css/foundation/global.css
@@ -268,12 +265,12 @@ else
 
   yarn add react react-dom
 
-  yarn add -D typescript webpack webpack-cli ts-loader webpack-dev-server html-webpack-plugin style-loader css-loader @types/node url-loader file-loader postcss-loader worker-plugin webpack-merge dotenv-webpack @types/react @types/react-dom autoprefixer css-mqpacker cssnano postcss-comment postcss-custom-media postcss-nested postcss-pxtorem postcss-custom-properties ress strip-ansi doius
+  yarn add -D typescript webpack webpack-cli ts-loader webpack-dev-server html-webpack-plugin style-loader css-loader @types/node url-loader file-loader postcss-loader worker-plugin webpack-merge dotenv-webpack @types/react @types/react-dom autoprefixer css-mqpacker cssnano postcss-comment postcss-custom-media postcss-nested postcss-pxtorem postcss-custom-properties ress strip-ansi doiuse
 
   ## write README
   touch README.md
   echo "# $1" >>README.md
 
   ## remove this script
-  rm -f init.sh
+  find ./ -name "*.sh" | xargs rm
 fi

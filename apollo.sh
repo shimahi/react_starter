@@ -189,10 +189,7 @@ else
   " >>webpack.prod.js
 
   ### make source files
-  mkdir src
-  mkdir src/assets
-  mkdir src/assets/css
-  mkdir src/assets/css/foundation
+  mkdir -p src/assets/css/foundation
   touch src/index.html
   touch src/index.tsx
   touch src/assets/css/foundation/global.css
@@ -275,5 +272,5 @@ else
   echo "# $1" >>README.md
 
   ## remove this script
-  rm -f init.sh
+  find ./ -name "*.sh" | xargs rm
 fi
