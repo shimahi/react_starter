@@ -10,9 +10,8 @@ else
   cd ../"$1"
 
   # ### remove original git information
-  rm -rf -f .git
-  rm -f .gitignore
-  rm -f README.md
+  rm -rf .git
+  rm -f .gitignore README.md
 
   # ### initialize package.json
   yarn init -y
@@ -21,13 +20,7 @@ else
   npx npm-add-script -k build -v "webpack --config webpack.prod.js --env=production"
 
   ### prepare bundler and other config files
-  touch .blowserslistrc
-  touch .gitignore
-  touch .postcssrc
-  touch tsconfig.json
-  touch webpack.common.js
-  touch webpack.dev.js
-  touch webpack.prod.js
+  touch .blowserslistrc .gitignore .postcssrc tsconfig.json webpack.common.js webpack.dev.js webpack.prod.js
 
   echo 'last 2 version
   > 1%
@@ -189,14 +182,10 @@ else
   " >>webpack.prod.js
 
   ### make source files
-  mkdir -p src/assets/css/foundation
-  touch src/index.html
-  touch src/index.tsx
-  touch src/assets/css/foundation/global.css
-  touch src/assets/css/foundation/media.css
-  mkdir types
-  touch types/style.css.d.ts
-  touch types/images.d.ts
+  mkdir -p src/assets/css/foundation types
+  touch src/index.html src/index.tsx \
+    src/assets/css/foundation/global.css src/assets/css/foundation/media.css \
+    types/style.css.d.ts types/images.d.ts
 
   echo '<!DOCTYPE html>
   <html lang="ja">
