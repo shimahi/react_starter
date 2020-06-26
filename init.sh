@@ -2,37 +2,39 @@
 
 if [ $# != 1 ]; then
   echo "Please set a one argument"
-else
-  #rename this directory
-  initialDir=$(basename $(basename$(pwd)))
-  mv ../${initialDir} ../"$1"
-  cd ../"$1"
+  return 2>&- || exit
+fi
 
-  # ### remove original git information
-  rm -rf .git
-  rm -f .gitignore README.md
+#rename this directory
+initialDir=$(basename $(basename$(pwd)))
+mv ../${initialDir} ../"$1"
+cd ../"$1"
 
-  # ### initialize package.json
-  yarn init -y
-  npx npm-add-script -k start -v "webpack-dev-server --open --hot --inline --config webpack.dev.js  --env=development"
-  npx npm-add-script -k dev -v "webpack --config webpack.dev.js --env=development"
-  npx npm-add-script -k build -v "webpack --config webpack.prod.js --env=production"
+# ### remove original git information
+rm -rf .git
+rm -f .gitignore README.md
 
-  ### prepare bundler and other config files
-  touch .blowserslistrc .gitignore .postcssrc tsconfig.json webpack.common.js webpack.dev.js webpack.prod.js
+# ### initialize package.json
+yarn init -y
+npx npm-add-script -k start -v "webpack-dev-server --open --hot --inline --config webpack.dev.js  --env=development"
+npx npm-add-script -k dev -v "webpack --config webpack.dev.js --env=development"
+npx npm-add-script -k build -v "webpack --config webpack.prod.js --env=production"
 
-  echo 'last 2 version
+### prepare bundler and other config files
+touch .blowserslistrc .gitignore .postcssrc tsconfig.json webpack.common.js webpack.dev.js webpack.prod.js
+
+echo 'last 2 version
 > 1%
 ' >>.blowserslistrc
 
-  echo 'node_modules
+echo 'node_modules
 dist/*
 yarn-error.log
 .DS_Store
 .vscode
 ' >>.gitignore
 
-  echo '{
+echo '{
   "modules": true,
   "parser": "postcss-comment",
   "plugins": {
@@ -56,7 +58,7 @@ yarn-error.log
 }
 ' >>.postcssrc
 
-  echo '{
+echo '{
   "compilerOptions": {
     "target": "es2019",
     "module": "esnext",
@@ -75,7 +77,7 @@ yarn-error.log
 }
 ' >>tsconfig.json
 
-  echo "const path = require('path')
+echo "const path = require('path')
 const WorkerPlugin = require('worker-plugin')
 
 module.exports = {
@@ -138,7 +140,7 @@ module.exports = {
 }
 " >>webpack.common.js
 
-  echo "const path = require('path')
+echo "const path = require('path')
 const merge = require('webpack-merge')
 const common = require('./webpack.common.js')
 const HTMLPlugin = require('html-webpack-plugin')
@@ -161,7 +163,7 @@ module.exports = merge(common, {
 })
 " >>webpack.dev.js
 
-  echo "const path = require('path')
+echo "const path = require('path')
 const merge = require('webpack-merge')
 const common = require('./webpack.common.js')
 const Dotenv = require('dotenv-webpack')
@@ -180,13 +182,13 @@ module.exports = merge(common, {
 })
 " >>webpack.prod.js
 
-  ### make source files
-  mkdir -p src/assets/css/foundation types
-  touch src/index.html src/index.tsx \
-    src/assets/css/foundation/global.css src/assets/css/foundation/media.css \
-    types/style.css.d.ts types/images.d.ts
+### make source files
+mkdir -p src/assets/css/foundation types
+touch src/index.html src/index.tsx \
+  src/assets/css/foundation/global.css src/assets/css/foundation/media.css \
+  types/style.css.d.ts types/images.d.ts
 
-  echo '<!DOCTYPE html>
+echo '<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
@@ -199,7 +201,7 @@ module.exports = merge(common, {
 </html>
 ' >>src/index.html
 
-  echo "import 'ress'
+echo "import 'ress'
   import 'assets/css/foundation/global.css'
 
   import React from 'react'
@@ -212,12 +214,12 @@ module.exports = merge(common, {
   render(<App />, document.getElementById('root'))
   " >>src/index.tsx
 
-  echo 'a {
+echo 'a {
   text-decoration: none;
 }
 ' >>src/assets/css/foundation/global.css
 
-  echo '@custom-media --xxs (max-width: 413.8px);
+echo '@custom-media --xxs (max-width: 413.8px);
 @custom-media --xs (max-width: 575.98px);
 
 @custom-media --sm (min-width: 575.98px);
@@ -226,13 +228,13 @@ module.exports = merge(common, {
 @custom-media --xl (min-width: 1199.98px);
 ' >>src/assets/css/foundation/media.css
 
-  echo "declare module '*.png'
+echo "declare module '*.png'
 declare module '*.jpg'
 declare module '*.gif'
 declare module '*.svg'
 " >>types/images.d.ts
 
-  echo "declare module '*.css' {
+echo "declare module '*.css' {
 interface IClassNames {
   [className: string]: string
 }
@@ -249,16 +251,15 @@ export = classNames
 }
 " >>types/style.css.d.ts
 
-  ### import npm packages
+### import npm packages
 
-  yarn add react react-dom
+yarn add react react-dom
 
-  yarn add -D typescript webpack webpack-cli ts-loader webpack-dev-server html-webpack-plugin style-loader css-loader @types/node url-loader file-loader postcss-loader worker-plugin webpack-merge dotenv-webpack @types/react @types/react-dom autoprefixer css-mqpacker cssnano postcss-comment postcss-custom-media postcss-nested postcss-pxtorem postcss-custom-properties ress strip-ansi doiuse apollo-client react-apollo graphql graphql-tag @apollo/react-hooks apollo-cache-inmemory apollo-link-http
+yarn add -D typescript webpack webpack-cli ts-loader webpack-dev-server html-webpack-plugin style-loader css-loader @types/node url-loader file-loader postcss-loader worker-plugin webpack-merge dotenv-webpack @types/react @types/react-dom autoprefixer css-mqpacker cssnano postcss-comment postcss-custom-media postcss-nested postcss-pxtorem postcss-custom-properties ress strip-ansi doiuse apollo-client react-apollo graphql graphql-tag @apollo/react-hooks apollo-cache-inmemory apollo-link-http
 
-  ## write README
-  touch README.md
-  echo "# $1" >>README.md
+## write README
+touch README.md
+echo "# $1" >>README.md
 
-  ## remove this script
-  find ./ -name "*.sh" | xargs rm
-fi
+## remove this script
+find ./ -name "*.sh" | xargs rm
