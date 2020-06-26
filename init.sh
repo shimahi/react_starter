@@ -214,7 +214,12 @@ echo "import 'ress'
   render(<App />, document.getElementById('root'))
   " >>src/index.tsx
 
-echo 'a {
+echo 'html {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+a {
   text-decoration: none;
 }
 ' >>src/assets/css/foundation/global.css
