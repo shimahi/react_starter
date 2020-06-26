@@ -4,9 +4,8 @@ if [ $# != 1 ]; then
   echo "Please set a one argument"
 else
   #rename this directory
-  initialDir=basename$(pwd)
-  initialDirVal=$(basename ${initialDir})
-  mv ../${initialDirVal} ../"$1"
+  initialDir=$(basename $(basename$(pwd)))
+  mv ../${initialDir} ../"$1"
   cd ../"$1"
 
   # ### remove original git information
