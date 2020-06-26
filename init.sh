@@ -6,8 +6,9 @@ if [ $# != 1 ]; then
 fi
 
 #rename this directory
-initialDir=$(basename $(basename$(pwd)))
-mv ../${initialDir} ../"$1"
+initialDir=basename$(pwd)
+initialDirVal=$(basename ${initialDir})
+mv ../${initialDirVal} ../"$1"
 cd ../"$1"
 
 # ### remove original git information
@@ -164,23 +165,23 @@ module.exports = merge(common, {
 " >>webpack.dev.js
 
 echo "const path = require('path')
-const merge = require('webpack-merge')
-const common = require('./webpack.common.js')
-const Dotenv = require('dotenv-webpack')
+  const merge = require('webpack-merge')
+  const common = require('./webpack.common.js')
+  const Dotenv = require('dotenv-webpack')
 
-module.exports = merge(common, {
-  mode: 'production',
-  output: {
-    publicPath: '/dist/',
-  },
-  devtool: 'none',
-  plugins: [
-    new Dotenv({
-      path: path.join(__dirname, '.env.production'),
-    }),
-  ],
-})
-" >>webpack.prod.js
+  module.exports = merge(common, {
+    mode: 'production',
+    output: {
+      publicPath: '/dist/',
+    },
+    devtool: 'none',
+    plugins: [
+      new Dotenv({
+        path: path.join(__dirname, '.env.production'),
+      }),
+    ],
+  })
+  " >>webpack.prod.js
 
 ### make source files
 mkdir -p src/assets/css/foundation types
@@ -240,19 +241,19 @@ declare module '*.svg'
 " >>types/images.d.ts
 
 echo "declare module '*.css' {
-interface IClassNames {
-  [className: string]: string
-}
-const classNames: IClassNames
-export = classNames
+  interface IClassNames {
+    [className: string]: string
+  }
+  const classNames: IClassNames
+  export = classNames
 }
 
 declare module '*.pcss' {
-interface IClassNames {
-  [className: string]: string
-}
-const classNames: IClassNames
-export = classNames
+  interface IClassNames {
+    [className: string]: string
+  }
+  const classNames: IClassNames
+  export = classNames
 }
 " >>types/style.css.d.ts
 
