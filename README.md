@@ -3,7 +3,7 @@
 Webpackを用いた TypeScript + React + Apollo + PostCSS アプリの環境構築を `create-react-app` を使わずに行えるシェルスクリプトです。  
 
 ### 動作環境
-Node.js `^14.3`
+Node.js `^14.3`  
 Yarn `^1.22.4`
 
 
