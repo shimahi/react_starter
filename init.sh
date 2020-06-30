@@ -100,6 +100,7 @@ module.exports = {
       },
       {
         test: /\.(css|pcss)/,
+        exclude: /node_modules/,
         use: [
           'style-loader',
           {
@@ -111,6 +112,21 @@ module.exports = {
             },
           },
           'postcss-loader',
+        ],
+      },
+      {
+        test: /.css$/,
+        include: /node_modules/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: false,
+              url: true,
+              importLoaders: 1,
+            },
+          },
         ],
       },
       {
