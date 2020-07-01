@@ -243,11 +243,11 @@ a {
 
 echo '@custom-media --xxs (max-width: 413.8px);
 @custom-media --xs (max-width: 575.98px);
-
 @custom-media --sm (min-width: 575.98px);
 @custom-media --md (min-width: 767.98px);
 @custom-media --lg (min-width: 991.98px);
 @custom-media --xl (min-width: 1199.98px);
+@custom-media --xxl (min-width: 1599.98px);
 ' >>src/assets/css/foundation/media.css
 
 echo "declare module '*.png'
