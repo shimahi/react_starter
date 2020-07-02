@@ -277,7 +277,10 @@ declare module '*.pcss' {
 
 yarn add react react-dom
 
-yarn add -D typescript webpack webpack-cli ts-loader webpack-dev-server html-webpack-plugin style-loader css-loader @types/node url-loader file-loader postcss-loader worker-plugin webpack-merge dotenv-webpack @types/react @types/react-dom autoprefixer css-mqpacker cssnano postcss-comment postcss-custom-media postcss-nested postcss-pxtorem postcss-custom-properties ress strip-ansi doiuse apollo-client react-apollo graphql graphql-tag @apollo/react-hooks apollo-cache-inmemory apollo-link-http
+yarn add -D typescript @types/{node,react,react-dom} \
+  webpack webpack-{cli,dev-server,merge} {ts,style,css,url,file,postcss}-loader html-webpack-plugin worker-plugin dotenv-webpack \
+  ress autoprefixer strip-ansi doiuse css-mqpacker cssnano postcss-{comment,custom-media,nested,pxtorem,custom-properties}  \
+  graphql graphql-tag apollo-{client,cache-inmemory,link-http} react-apollo @apollo/react-hooks
 
 ## write README
 touch README.md
