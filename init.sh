@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [ $# != 1 ]; then
-  echo "Please set a one argument"
+  echo "Please set an argument"
   return 2>&- || exit
 fi
 
