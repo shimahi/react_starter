@@ -72,7 +72,7 @@ echo '{
     "paths": {
       "@/*": ["src/*"]
     },
-    "typeRoots": ["types", "mode_modules/@types"],
+    "typeRoots": ["src/types", "mode_modules/@types"],
     "resolveJsonModule": true
   }
 }
@@ -200,10 +200,10 @@ echo "const path = require('path')
   " >>webpack.prod.js
 
 ### make source files
-mkdir -p src/assets/css/foundation types
+mkdir -p src/assets/css/foundation src/types
 touch src/index.html src/index.tsx \
   src/assets/css/foundation/global.css src/assets/css/foundation/media.css \
-  types/style.css.d.ts types/images.d.ts
+  src/types/style.css.d.ts src/types/images.d.ts
 
 echo '<!DOCTYPE html>
 <html lang="ja">
@@ -254,7 +254,7 @@ echo "declare module '*.png'
 declare module '*.jpg'
 declare module '*.gif'
 declare module '*.svg'
-" >>types/images.d.ts
+" >>src/types/images.d.ts
 
 echo "declare module '*.css' {
   interface IClassNames {
@@ -271,7 +271,7 @@ declare module '*.pcss' {
   const classNames: IClassNames
   export = classNames
 }
-" >>types/style.css.d.ts
+" >>src/types/style.css.d.ts
 
 ### import npm packages
 
