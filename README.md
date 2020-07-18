@@ -1,6 +1,6 @@
 # REACT STARTER
 
-Webpackを用いた TypeScript + React + Apollo + PostCSS アプリの環境構築を `create-react-app` を使わずに行えるシェルスクリプトです。  
+Reactアプリでよく使うパッケージを入れたスターターキット  
 
 ### 動作環境
 Node.js `^14.3`  
