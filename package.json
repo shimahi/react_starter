@@ -1,0 +1,22 @@
+{
+  "name": "inu",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server --port=3000 --open --hot --inline --config webpack.dev.js --env=development",
+    "dev": "webpack --config webpack.dev.js --env=development",
+    "build": "webpack --config webpack.prod.js --env=production",
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}

@@ -15,21 +15,18 @@ cd ../"$1"
 rm -rf .git
 rm -f .gitignore README.md
 
-# ### initialize package.json
-yarn init -y
-npx npm-add-script -k start -v "webpack-dev-server --port=3000 --open --hot --inline --config webpack.dev.js --env=development"
-npx npm-add-script -k dev -v "webpack --config webpack.dev.js --env=development"
-npx npm-add-script -k build -v "webpack --config webpack.prod.js --env=production"
-
 ### import npm packages
-yarn add react react-dom
+yarn add react react-dom @emotion/core ress
 yarn add -D typescript @types/{node,react,react-dom} \
   webpack webpack-{cli,dev-server,merge} {ts,style,css,url,file,babel}-loader html-webpack-plugin worker-plugin dotenv-webpack \
-  ress @emotion/{core,babel-preset-css-prop} \
+  @emotion/babel-preset-css-prop \
   @babel/{core,preset-env,preset-react} \
   graphql graphql-tag apollo-{client,cache-inmemory,link-http} react-apollo @apollo/react-hooks \
   @graphql-codegen/{cli,typescript,typescript-operations,typescript-react-apollo} \
-  prettier
+  prettier eslint eslint-config-{airbnb-typescript,prettier} eslint-plugin-{import,jsx-a11y,prettier,react,react-hooks} \
+  @typescript-eslint/eslint-plugin @typescript-eslint/parser \
+  husky lint-staged
+
 
 ## write README
 touch README.md
