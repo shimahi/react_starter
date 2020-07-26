@@ -1,5 +1,5 @@
-const path = require('path')
-const WorkerPlugin = require('worker-plugin')
+const path = require('path');
+const WorkerPlugin = require('worker-plugin');
 
 module.exports = {
   entry: './src/index.tsx',
@@ -56,13 +56,10 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.ts', '.tsx', '.json', '.mjs', '.wasm'],
-    modules: [
-      path.resolve(__dirname, 'src'),
-      path.resolve(__dirname, 'node_modules'),
-    ],
+    modules: [path.resolve(__dirname, 'src'), path.resolve(__dirname, 'node_modules')],
     alias: {
       src: path.resolve(__dirname, 'src'),
     },
   },
   plugins: [new WorkerPlugin()],
-}
+};

@@ -17,10 +17,9 @@ rm -f .gitignore README.md
 
 # ### initialize package.json
 yarn init -y
-npx npm-add-script -k start -v "webpack-dev-server --open --hot --inline --config webpack.dev.js  --env=development"
+npx npm-add-script -k start -v "webpack-dev-server --port=3000 --open --hot --inline --config webpack.dev.js --env=development"
 npx npm-add-script -k dev -v "webpack --config webpack.dev.js --env=development"
 npx npm-add-script -k build -v "webpack --config webpack.prod.js --env=production"
-
 
 ### import npm packages
 yarn add react react-dom
@@ -29,7 +28,8 @@ yarn add -D typescript @types/{node,react,react-dom} \
   ress @emotion/{core,babel-preset-css-prop} \
   @babel/{core,preset-env,preset-react} \
   graphql graphql-tag apollo-{client,cache-inmemory,link-http} react-apollo @apollo/react-hooks \
-  @graphql-codegen/{cli,typescript,typescript-operations,typescript-react-apollo}
+  @graphql-codegen/{cli,typescript,typescript-operations,typescript-react-apollo} \
+  prettier
 
 ## write README
 touch README.md
