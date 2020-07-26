@@ -11,12 +11,21 @@ initialDirVal=$(basename ${initialDir})
 mv ../${initialDirVal} ../"$1"
 cd ../"$1"
 
-# ### remove original git information
+## setting git
 rm -rf .git
 rm -f .gitignore README.md
+touch .gitignore
+echo 'node_modules
+dist/*
+yarn-error.log
+.DS_Store
+.vscode
+' >>.gitignore
+git init &
 
 ### import npm packages
-yarn add react react-dom @emotion/core ress
+yarn add react react-dom @emotion/core ress &
+wait #husky should be installed after '.git' was created.
 yarn add -D typescript @types/{node,react,react-dom} \
   webpack webpack-{cli,dev-server,merge} {ts,style,css,url,file,babel}-loader html-webpack-plugin worker-plugin dotenv-webpack \
   @emotion/babel-preset-css-prop \
@@ -25,21 +34,11 @@ yarn add -D typescript @types/{node,react,react-dom} \
   @graphql-codegen/{cli,typescript,typescript-operations,typescript-react-apollo} \
   prettier eslint eslint-config-{airbnb-typescript,prettier} eslint-plugin-{import,jsx-a11y,prettier,react,react-hooks} \
   @typescript-eslint/eslint-plugin @typescript-eslint/parser \
-  husky lint-staged
-
+  lint-staged husky
 
 ## write README
 touch README.md
 echo "# $1" >>README.md
 
-## write gitignore
-touch .gitignore
-echo 'node_modules
-dist/*
-yarn-error.log
-.DS_Store
-.vscode
-' >>.gitignore
-
 ## remove this script
-find ./ -name "*.sh" | xargs rm
+find ./ -name "init.sh" | xargs rm
