@@ -10,13 +10,19 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
-        use: {
-          loader: 'ts-loader',
-          options: {
-            transpileOnly: true,
+        test: /\.ts(x?)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'babel-loader',
           },
-        },
+          {
+            loader: 'ts-loader',
+            options: {
+              transpileOnly: true,
+            },
+          },
+        ],
       },
       {
         // cssファイルは自前で書かない(emotionを使う)が、animate.css等のcssライブラリを使うためにローダーを入れる

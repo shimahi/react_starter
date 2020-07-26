@@ -1,4 +1,4 @@
-import { css } from 'emotion'
+import { css } from '@emotion/core'
 
 export const xxs = `@media (max-width: 413.98px)`
 export const xs = `@media (max-width: 575.98px)`

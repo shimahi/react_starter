@@ -25,8 +25,9 @@ npx npm-add-script -k build -v "webpack --config webpack.prod.js --env=productio
 ### import npm packages
 yarn add react react-dom
 yarn add -D typescript @types/{node,react,react-dom} \
-  webpack webpack-{cli,dev-server,merge} {ts,style,css,url,file}-loader html-webpack-plugin worker-plugin dotenv-webpack \
-  ress emotion @emotion/core emotion-server  \
+  webpack webpack-{cli,dev-server,merge} {ts,style,css,url,file,babel}-loader html-webpack-plugin worker-plugin dotenv-webpack \
+  ress @emotion/{core,babel-preset-css-prop} \
+  @babel/{core,preset-env,preset-react} \
   graphql graphql-tag apollo-{client,cache-inmemory,link-http} react-apollo @apollo/react-hooks \
   @graphql-codegen/{cli,typescript,typescript-operations,typescript-react-apollo}
 
