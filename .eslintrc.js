@@ -32,12 +32,36 @@ module.exports = {
     'no-unused-expressions': ['error', { allowShortCircuit: true }],
     'no-underscore-dangle': 'off',
     'no-nested-ternary': 'off',
+    'no-unused-vars': 'off',
     // @typescript-eslint
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-empty-function': 'off',
     '@typescript-eslint/prefer-interface': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-use-before-define': 'off',
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        varsIgnorePattern: '_',
+        argsIgnorePattern: '^_',
+      },
+    ],
+    '@typescript-eslint/naming-convention': [
+      'error',
+      {
+        selector: 'variable',
+        format: ['camelCase', 'PascalCase', 'UPPER_CASE'],
+        filter: { regex: '^_|__', match: false },
+      },
+      {
+        selector: 'function',
+        format: ['camelCase', 'PascalCase'],
+      },
+      {
+        selector: 'typeLike',
+        format: ['PascalCase'],
+      },
+    ],
     //prettier
     'prettier/prettier': [
       'warn',
@@ -53,13 +77,19 @@ module.exports = {
       'error',
       {
         devDependencies: ['src/**/*.stories.tsx'],
+        peerDependencies: false,
       },
     ],
     // jsx-a11y
     'jsx-a11y/click-events-have-key-events': 'off',
     'jsx-a11y/no-noninteractive-element-interactions': 'off',
+    'jsx-a11y/no-static-element-interactions': 'off',
     'jsx-a11y/img-redundant-alt': 'off',
+    'jsx-a11y/anchor-is-valid': 'off',
+    'jsx-a11y/label-has-associated-control': 'off',
+    'jsx-a11y/interactive-supports-focus': 'off',
     // react
+    'react/react-in-jsx-scope': 'off',
     'react/jsx-filename-extension': [
       'error',
       {
@@ -72,9 +102,10 @@ module.exports = {
     'react/display-name': 'off',
     'react/button-has-type': 'off',
     'react/jsx-props-no-spreading': 'off',
+    'react/jsx-one-expression-per-line': 'off',
     // react-hooks
     'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn',
+    'react-hooks/exhaustive-deps': 'error',
   },
   overrides: [
     {
@@ -84,4 +115,4 @@ module.exports = {
       },
     },
   ],
-};
+}
