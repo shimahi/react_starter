@@ -24,8 +24,7 @@ yarn-error.log
 git init &
 
 ### import npm packages
-yarn add react react-dom @emotion/core ress \
-  apollo-{client,cache-inmemory,link-http} react-apollo @apollo/react-hooks &
+yarn add react react-dom @emotion/core ress @apollo/client
 wait #husky should be installed after '.git' was created.
 yarn add -D typescript @types/{node,react,react-dom} \
   webpack webpack-{cli,dev-server,merge} {ts,style,css,url,file,babel}-loader html-webpack-plugin worker-plugin dotenv-webpack \

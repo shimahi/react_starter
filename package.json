@@ -7,7 +7,8 @@
     "start": "webpack-dev-server --port=3000 --open --hot --inline --config webpack.dev.js --env=development",
     "dev": "webpack --config webpack.dev.js --env=development",
     "build": "webpack --config webpack.prod.js --env=production",
-    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix"
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix",
+    "generate": "graphql-codegen --config codegen.yml"
   },
   "lint-staged": {
     "src/**/*.{ts,tsx}": [
