@@ -1,10 +1,11 @@
-const path = require('path');
-const WorkerPlugin = require('worker-plugin');
+const path = require('path')
+const WorkerPlugin = require('worker-plugin')
+const HTMLPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: './src/index.tsx',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js',
   },
   module: {
@@ -61,5 +62,10 @@ module.exports = {
       src: path.resolve(__dirname, 'src'),
     },
   },
-  plugins: [new WorkerPlugin()],
-};
+  plugins: [
+    new HTMLPlugin({
+      template: path.join(__dirname, 'src/index.html'),
+    }),
+    new WorkerPlugin(),
+  ],
+}
