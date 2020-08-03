@@ -14,7 +14,7 @@ cd ../"$1"
 ## setting git
 rm -rf .git
 rm -f .gitignore README.md
-touch .gitignore
+touch .gitignore .env
 echo 'node_modules
 public/*
 yarn-error.log
