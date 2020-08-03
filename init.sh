@@ -20,6 +20,7 @@ public/*
 yarn-error.log
 .DS_Store
 .vscode
+.env
 ' >>.gitignore
 git init &
 
