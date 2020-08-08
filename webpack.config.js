@@ -11,6 +11,13 @@ module.exports = {
     path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js',
   },
+  resolve: {
+    extensions: ['.js', '.ts', '.tsx', '.json', '.mjs', '.wasm'],
+    modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+    alias: {
+      src: path.resolve(__dirname, 'src'),
+    },
+  },
   module: {
     rules: [
       {
@@ -57,13 +64,6 @@ module.exports = {
         ],
       },
     ],
-  },
-  resolve: {
-    extensions: ['.js', '.ts', '.tsx', '.json', '.mjs', '.wasm'],
-    modules: [path.resolve(__dirname, 'src'), path.resolve(__dirname, 'node_modules')],
-    alias: {
-      src: path.resolve(__dirname, 'src'),
-    },
   },
   plugins: [
     new HTMLPlugin({
