@@ -25,13 +25,12 @@ yarn-error.log
 git init &
 
 ### import npm packages
-yarn add react react-dom @emotion/core ress @apollo/client graphql
+yarn add react react-dom @emotion/core ress
 wait #husky should be installed after '.git' was created.
 yarn add -D typescript @types/{node,react,react-dom} \
   webpack webpack-{cli,dev-server,merge} {ts,style,css,url,file,babel}-loader html-webpack-plugin worker-plugin dotenv-webpack \
   @emotion/babel-preset-css-prop \
   @babel/{core,preset-env,preset-react} \
-  @graphql-codegen/{cli,typescript,typescript-operations,typescript-react-apollo} \
   prettier eslint eslint-config-{airbnb-typescript,prettier} eslint-plugin-{import,jsx-a11y,prettier,react,react-hooks} \
   @typescript-eslint/eslint-plugin @typescript-eslint/parser \
   lint-staged husky
