@@ -16,7 +16,7 @@ rm -rf .git
 rm -f .gitignore README.md
 touch .gitignore .env
 echo 'node_modules
-public/*
+dist/*
 yarn-error.log
 .DS_Store
 .vscode
