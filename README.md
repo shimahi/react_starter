@@ -1,6 +1,8 @@
 # REACT STARTER
 
 Reactアプリでよく使うパッケージを入れたスターターキット  
+いちばん薄く作っていて、Reactの練習や、単純なSPAを開発するときに使う  
+Next.jsでwebサイトを作りたい場合は[こちら](https://github.com/shimahi/next_starter)
 
 ### 動作環境
 Node.js `^14.3`  
