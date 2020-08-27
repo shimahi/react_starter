@@ -28,7 +28,7 @@ git init &
 yarn add react react-dom @emotion/core ress
 wait #husky should be installed after '.git' was created.
 yarn add -D typescript @types/{node,react,react-dom} \
-  webpack webpack-{cli,dev-server,merge} {ts,style,css,url,file,babel}-loader html-webpack-plugin worker-plugin dotenv-webpack \
+  webpack webpack-{cli,dev-server} {ts,style,css,url,file,babel}-loader html-webpack-plugin worker-plugin dotenv-webpack \
   @emotion/babel-preset-css-prop \
   @babel/{core,preset-env,preset-react} \
   prettier eslint eslint-config-{airbnb-typescript,prettier} eslint-plugin-{import,jsx-a11y,prettier,react,react-hooks} \
