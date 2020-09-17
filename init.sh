@@ -25,7 +25,7 @@ yarn-error.log
 git init &
 
 ### import npm packages
-yarn add react react-dom @emotion/core @emotion/styled ress
+yarn add react react-dom @emotion/core @emotion/styled ress twin.macro
 wait #husky should be installed after '.git' was created.
 yarn add -D typescript @types/{node,react,react-dom} \
   webpack webpack-{cli,dev-server} {ts,style,css,url,file,babel}-loader html-webpack-plugin worker-plugin dotenv-webpack \
@@ -38,6 +38,9 @@ yarn add -D typescript @types/{node,react,react-dom} \
 ## write README
 touch README.md
 echo "# $1" >>README.md
+
+## setup tailwindcss
+npx tailwindcss init
 
 ## remove this script
 find ./ -name "init.sh" | xargs rm
