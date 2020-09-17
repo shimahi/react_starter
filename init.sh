@@ -25,7 +25,7 @@ yarn-error.log
 git init &
 
 ### import npm packages
-yarn add react react-dom @emotion/core ress
+yarn add react react-dom @emotion/core @emotion/styled ress
 wait #husky should be installed after '.git' was created.
 yarn add -D typescript @types/{node,react,react-dom} \
   webpack webpack-{cli,dev-server} {ts,style,css,url,file,babel}-loader html-webpack-plugin worker-plugin dotenv-webpack \
