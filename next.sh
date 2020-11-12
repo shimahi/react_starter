@@ -48,6 +48,12 @@ rm -f babel.config.js init.sh webpack.config.js
 rm -f src/index.html src/index.tsx
 mv babel.next.config.js babel.config.js
 
+mkdir src/components/atoms
+mkdir src/components/molecules
+mkdir src/components/organisms
+mkdir src/components/templates
+mkdir src/contexts
+
 ### import npm packages
 yarn add next graphql @apollo/client apollo-server-micro @emotion/server @emotion/css
 
