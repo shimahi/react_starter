@@ -21,6 +21,7 @@ yarn-error.log
 .DS_Store
 .vscode
 .env
+src/types/graphql.ts
 ' >>.gitignore
 git init &
 
