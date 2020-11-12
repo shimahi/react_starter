@@ -25,12 +25,12 @@ yarn-error.log
 git init &
 
 ### import npm packages
-yarn add react react-dom @emotion/core @emotion/styled ress twin.macro
+yarn add react react-dom @emotion/react @emotion/styled ress twin.macro
 wait #husky should be installed after '.git' was created.
 yarn add -D typescript @types/{node,react,react-dom} \
   webpack webpack-{cli,dev-server} {ts,style,css,url,file,babel}-loader html-webpack-plugin worker-plugin dotenv-webpack \
   @emotion/babel-preset-css-prop \
-  @babel/{core,preset-env,preset-react} \
+  @babel/{core,preset-env,preset-react,plugin-transform-runtime} \
   prettier eslint eslint-config-{airbnb-typescript,prettier} eslint-plugin-{import,jsx-a11y,prettier,react,react-hooks} \
   @typescript-eslint/eslint-plugin @typescript-eslint/parser \
   lint-staged husky
