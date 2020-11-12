@@ -1,0 +1,6 @@
+query getInu {
+  inu {
+    name
+    age
+  }
+}
