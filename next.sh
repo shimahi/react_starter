@@ -59,6 +59,8 @@ yarn add next graphql @apollo/client apollo-server-micro @emotion/server @emotio
 
 yarn add -D @graphql-codegen/{cli,typescript,typescript-operations,typescript-react-apollo}
 
+yarn remove html-webpack-plugin worker-plugin
+
 ## change "scripts" attributes of package.json
 cat package.json | jq '.scripts.dev = "next dev"' | jq '.scripts.build = "next build"'  > tmp.json
 rm -f package.json

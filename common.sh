@@ -34,7 +34,7 @@ yarn add -D typescript @types/{node,react,react-dom} \
   @babel/{core,preset-env,preset-react,plugin-transform-runtime} \
   prettier eslint eslint-config-{airbnb-typescript,prettier} eslint-plugin-{import,jsx-a11y,prettier,react,react-hooks} \
   @typescript-eslint/eslint-plugin @typescript-eslint/parser \
-  lint-staged husky
+  lint-staged husky html-webpack-plugin worker-plugin
 
 ## write README
 touch README.md
