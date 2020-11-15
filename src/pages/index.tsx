@@ -1,4 +1,4 @@
-import { Layout } from 'components/layouts'
+import { Layout } from 'components/_layouts'
 
 export default function Index() {
   return (
