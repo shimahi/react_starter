@@ -57,7 +57,8 @@ mkdir src/contexts
 ### import npm packages
 yarn add next graphql @apollo/client apollo-server-micro @emotion/server @emotion/css
 
-yarn add -D @graphql-codegen/{cli,typescript,typescript-operations,typescript-react-apollo}
+yarn add -D @graphql-codegen/{cli,typescript,typescript-operations,typescript-react-apollo} \
+  url-loader file-loader
 
 yarn remove html-webpack-plugin worker-plugin
 
