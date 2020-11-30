@@ -62,10 +62,17 @@ yarn add -D @graphql-codegen/{cli,typescript,typescript-operations,typescript-re
 
 yarn remove html-webpack-plugin worker-plugin
 
+
+
 ## change "scripts" attributes of package.json
 cat package.json | jq '.scripts.dev = "next dev"' | jq '.scripts.build = "next build"'  > tmp.json
 rm -f package.json
 mv tmp.json package.json
+
+## change "jsx" attributes of tsconfig.json
+cat tsconfig.json | jq '.compilerOptions.jsx = "preserve"' > temp.json
+rm -f tsconfig.json
+mv temp.json tsconfig.json
 
 ## add scripts
 npx npm-add-script -k start -v "next start"
