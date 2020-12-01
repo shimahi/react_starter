@@ -69,11 +69,6 @@ cat package.json | jq '.scripts.dev = "next dev"' | jq '.scripts.build = "next b
 rm -f package.json
 mv tmp.json package.json
 
-## change "jsx" attributes of tsconfig.json
-cat tsconfig.json | jq '.compilerOptions.jsx = "preserve"' > temp.json
-rm -f tsconfig.json
-mv temp.json tsconfig.json
-
 ## add scripts
 npx npm-add-script -k start -v "next start"
 npx npm-add-script -k export -v "next export"
