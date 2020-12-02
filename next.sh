@@ -69,6 +69,11 @@ cat package.json | jq '.scripts.dev = "next dev"' | jq '.scripts.build = "next b
 rm -f package.json
 mv tmp.json package.json
 
+## change "include" attributes of tsconfig.json
+cat tsconfig.json | jq '.include = ["src", "next-env.d.ts"]' > temp.json
+rm -f tsconfig.json
+mv temp.json tsconfig.json
+
 ## add scripts
 npx npm-add-script -k start -v "next start"
 npx npm-add-script -k export -v "next export"
