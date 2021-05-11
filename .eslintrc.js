@@ -5,13 +5,7 @@ module.exports = {
     es6: true,
     jest: true,
   },
-  extends: [
-    'airbnb-typescript',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:react/recommended',
-    'prettier',
-    'plugin:prettier/recommended',
-  ],
+  extends: ['airbnb-typescript', 'plugin:@typescript-eslint/recommended', 'plugin:react/recommended', 'prettier'],
   parserOptions: {
     project: './tsconfig.json',
     ecmaVersion: 2018,
